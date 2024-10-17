@@ -1,3 +1,4 @@
+ 
  void addPatient(const string& name, int age, const string& Notes) {
         Patient pt;
         pt.name = name;

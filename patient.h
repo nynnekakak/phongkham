@@ -1,8 +1,6 @@
 #ifndef     Patient_h
 #define     Patient_h
-
-#include "date.h"
-#include "Time.h"
+#include "DateTime.h"
 #include "contact.h"
 #include <iostream>
 #include <string>
@@ -10,19 +8,20 @@
 using namespace std;
 class Patient {
 private:
-    string name,gender, Notes;  
+    string name,gender, notes;  
     int age,ID;   
     Date dob; 
-    Date appointmentDate;  
-    Time appointmentTime;  
+    DateTime a;  
     Contact contact;           
-
-
 public:
-    Patient();
+    Patient (){}
+    Patient  (string name, string gender, string notes, int age, int ID, 
+            Date dob, DateTime a, Contact contact) 
+        : name(name), gender(gender), notes(notes), age(age), ID(ID), 
+          dob(dob), a(a), contact(contact) {}
     ~Patient();
-    void setinfor(string n, int a, string g, string notes);
-    void getinfor() const;
-    void display() const;
+    Patient     setinfor (string name, int age, string gender, string notes,Date dob, DateTime a, Contact contact)  const {}
+    string      getinfor() const;
+    void        display();
 };
 #endif

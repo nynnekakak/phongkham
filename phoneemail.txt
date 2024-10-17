@@ -1,0 +1,22 @@
+int main() {
+    string soDienThoai, email;
+    cout << "Nhap so dien thoai: ";
+    cin >> soDienThoai;
+    cout << "Nhap email: ";
+    cin >> email;
+
+    // Ki?m tra s?  i?n tho?i v  email
+    if (kiemTraSoDienThoai(soDienThoai)) {
+        cout << "So dien thoai hop le." << endl;
+    } else {
+        cout << "So dien thoai khong hop le." << endl;
+    }
+
+    if (kiemTraEmail(email)) {
+        cout << "Email hop le." << endl;
+    } else {
+        cout << "Email khong hop le." << endl;
+    }
+
+    return 0;
+}

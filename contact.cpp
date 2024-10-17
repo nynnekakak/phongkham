@@ -3,7 +3,6 @@
 #include<iostream>
 #include <algorithm> 
 #include <cctype>    
-
 using namespace std;
 Contact::Contact(string phoneNumber, string email) 
     : phoneNumber(phoneNumber), email(email) {}
@@ -34,3 +33,6 @@ void Contact::saveToFile(ofstream& file) const {
     file << "Phone Number: " << phoneNumber << endl;
     file << "Email: " << email << endl;
 }
+string  Contact:: to_string() const {
+        return "Phone: " + phone + ", Email: " + email;
+    }

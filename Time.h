@@ -1,18 +1,20 @@
 #ifndef TIME_H
 #define TIME_H
-
-#include <iostream>
-#include <fstream>
-#include <iomanip>  
+#include <iomanip>
+#include<iostream>
 using namespace std;
-class Time {
-private:
-    int hour, minute;
-
+class Time
+{
+protected:
+    int h,m,s;
 public:
-    Time(int hour = 0, int minute = 0);
-    void displayTime() const;
-    void saveToFile(ofstream& file) const;
+    Time(int h=1, int m=1, int s=1) : h(h), m(m), s(s){}
+    ~Time(){}
+    string to_string() const {
+        return to_string(h) + ":" + to_string(m) + ":" + to_string(s);
+    }
+    void display () {
+        cout << h<< ": "<< m <<":" <<s<<endl;
+    }
 };
-
 #endif
