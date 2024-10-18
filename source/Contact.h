@@ -15,7 +15,8 @@ public:
     bool getPhoneNumber(const string   &phonenumber) const{}
     bool getEmail(const string&email) const{}
     void displayContact() const{}
-    void saveToFile(ofstream& file) const{}
+    void saveToFile(ofstream& file="login.txt") const{}
     string to_string() const {}
+    static  Contact fromString(const string& contactStr) 
 };
 #endif

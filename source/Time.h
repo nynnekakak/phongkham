@@ -1,20 +1,33 @@
 #ifndef TIME_H
 #define TIME_H
-#include <iomanip>
-#include<iostream>
+
+#include <iostream>
+#include <string>
 using namespace std;
+
 class Time
 {
 protected:
-    int h,m,s;
+    int h, m, s; // Giờ, phút, giây
+
 public:
-    Time (int h=1, int m=1, int s=1) : h(h), m(m), s(s){}
-    ~Time(){}
+    Time() : h(1), m(1), s(1) {}
+    Time(int h, int m, int s) : h(h), m(m), s(s) {}
     string to_string() const {
         return to_string(h) + ":" + to_string(m) + ":" + to_string(s);
     }
-    void display () {
-        cout << h<< ": "<< m <<":" <<s<<endl;
+     static Time fromString(const string& timeStr) {
+        Time t;
+        stringstream ss(timeStr);
+        char colon=':';
+        ss >> t.h >> colon >> t.m >> colon >> t.s;  
+        return t;
     }
+    void display() const {
+        cout << h << ":" << m << ":" << s << endl;
+    }
+    ~Time() {}
 };
-#endif
+
+#endif // TIME_H
+

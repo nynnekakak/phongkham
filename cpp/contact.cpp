@@ -35,3 +35,13 @@ void Contact::saveToFile(ofstream& file) const {
 string  Contact:: to_string() const {
         return "Phone: " + phone + ", Email: " + email;
     }
+static Contact::Contact fromString(const string& contactStr) {
+        stringstream ss(contactStr);
+        string token;
+        Contact contact;
+        getline(ss, token, ',');
+        contact.phone = token;
+        getline(ss, token, ',');
+        contact.email = token;
+        return contact;
+    }
